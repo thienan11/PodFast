@@ -12,7 +12,7 @@ const regularSummaries = posts.filter((summary) => !summary.featured);
 
 export default function Home() {
   return (
-    <div className="container mx-auto py-12">
+    <div className="container py-12">
       <section className="mb-16">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-medium tracking-tight mb-4 text-pastel-text">
@@ -66,7 +66,11 @@ export default function Home() {
                   {summary.description}
                 </p>
                 <div className="flex justify-end">
-                  <Button variant="ghost" size="sm" className="text-xs cursor-pointer">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-xs cursor-pointer"
+                  >
                     Read Summary
                     <ExternalLink className="h-3 w-3 ml-1" />
                   </Button>
@@ -87,7 +91,7 @@ export default function Home() {
             <Link
               key={summary.id}
               href={`/summary/${summary.id}`}
-              className="transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5 block border rounded-lg p-5 bg-background"
+              className="group transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5 block border rounded-lg p-5 bg-background"
             >
               <div className="flex items-center justify-between mb-1">
                 <Badge variant="outline" className="text-xs font-normal">
@@ -100,7 +104,7 @@ export default function Home() {
                   <span>{formatDuration(summary.duration)}</span>
                 </div>
               </div>
-              <h3 className="text-lg font-medium mt-2 mb-1 hover:text-primary transition-colors">
+              <h3 className="text-lg font-medium mt-2 mb-1 group-hover:text-primary transition-colors">
                 {summary.title}
               </h3>
               <p className="text-sm text-muted-foreground line-clamp-2">

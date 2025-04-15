@@ -13,7 +13,7 @@
   --color-pastel-teal: #caffbf;
   --color-pastel-lavender: #e4c1f9;
   --color-pastel-bg: #fafafa;
-  --color-pastel-text: #4a5568;
+  --color-pastel-text: #737892;
   --color-pastel-muted: #a0aec0;
 }
 
@@ -93,12 +93,12 @@
 }
 
 .dark {
-  --background: oklch(4.9% 0.02 270);
-  --foreground: oklch(98% 0.02 210);
-  --card: oklch(4.9% 0.02 270);
-  --card-foreground: oklch(98% 0.02 210);
-  --popover: oklch(4.9% 0.02 270);
-  --popover-foreground: oklch(98% 0.02 210);
+  --background: oklch(25% 0.02 270);
+  --foreground: oklch(92% 0.02 210);
+  --card: oklch(25% 0.02 270);
+  --card-foreground: oklch(92% 0.02 210);
+  --popover: oklch(25% 0.02 270);
+  --popover-foreground: oklch(92% 0.02 210);
   --primary: oklch(45% 0.1 25); /* soft red, suitable for dark bg */
   --primary-foreground: oklch(98% 0.01 20); /* light text for contrast */
   --secondary: oklch(0.279 0.041 260.031);
@@ -133,4 +133,9 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 10px;
 }
