@@ -3,6 +3,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --color-pastel-blue: #a0c4ff;
+  --color-pastel-purple: #bdb2ff;
+  --color-pastel-pink: #ffadad;
+  --color-pastel-green: #9bf6ff;
+  --color-pastel-yellow: #fdffb6;
+  --color-pastel-orange: #ffd6a5;
+  --color-pastel-teal: #caffbf;
+  --color-pastel-lavender: #e4c1f9;
+  --color-pastel-bg: #fafafa;
+  --color-pastel-text: #4a5568;
+  --color-pastel-muted: #a0aec0;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -45,14 +59,14 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
+  --background: oklch(98% 0 0);
+  --foreground: oklch(26% 0.15 280);
+  --card: oklch(100% 0 0);
+  --card-foreground: oklch(26% 0.15 280);
+  --popover: oklch(100% 0 0);
+  --popover-foreground: oklch(26% 0.15 280);
+  --primary: oklch(72% 0.1 25); /* very soft red */
+  --primary-foreground: oklch(20% 0.02 25); /* dark text for contrast */
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
@@ -79,14 +93,14 @@
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
+  --background: oklch(4.9% 0.02 270);
+  --foreground: oklch(98% 0.02 210);
+  --card: oklch(4.9% 0.02 270);
+  --card-foreground: oklch(98% 0.02 210);
+  --popover: oklch(4.9% 0.02 270);
+  --popover-foreground: oklch(98% 0.02 210);
+  --primary: oklch(45% 0.1 25); /* soft red, suitable for dark bg */
+  --primary-foreground: oklch(98% 0.01 20); /* light text for contrast */
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(0.279 0.041 260.031);

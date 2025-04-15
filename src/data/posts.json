@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "The Future of AI and Its Impact on Society",
+    "channel": "Tech Insights Podcast",
+    "duration": 7200,
+    "description": "A deep dive into how artificial intelligence is reshaping our world and what to expect in the coming years.",
+    "summary": "In this episode, experts discuss the rapid advancement of AI technology and its potential implications for jobs, privacy, and human interaction. Key points include the need for ethical guidelines, the importance of human oversight, and the potential for AI to solve major global challenges. The conversation also touches on concerns about AI safety and the need for international cooperation in regulating advanced AI systems.",
+    "category": "Technology",
+    "featured": true,
+    "color": "bg-pastel-blue",
+    "textColor": "text-pastel-text"
+  },
+  {
+    "id": "2",
+    "title": "Entrepreneurship in the Digital Age",
+    "channel": "Startup Stories",
+    "duration": 5400,
+    "description": "Successful founders share their journeys and insights on building businesses in today's digital landscape.",
+    "summary": "This podcast features interviews with three successful tech entrepreneurs who built companies valued at over $100 million. They discuss common challenges in the early stages, including funding difficulties, team building, and product-market fit. All three emphasized the importance of resilience and adaptability. Key advice includes focusing on solving real problems, listening to customer feedback, and being willing to pivot when necessary. The founders also shared their thoughts on work-life balance and mental health as entrepreneurs.",
+    "category": "Business",
+    "featured": false,
+    "color": "bg-pastel-green",
+    "textColor": "text-pastel-text"
+  },
+  {
+    "id": "3",
+    "title": "Climate Change: Understanding the Science",
+    "channel": "Science Explained",
+    "duration": 3600,
+    "description": "Leading climate scientists break down the latest research and what it means for our planet.",
+    "summary": "This episode provides a comprehensive overview of climate science for non-specialists. The scientists explain how greenhouse gases trap heat in the atmosphere and discuss the evidence for human-caused climate change. They address common misconceptions and explain why there is scientific consensus on this issue. The discussion covers projected impacts including rising sea levels, extreme weather events, and threats to biodiversity. The scientists conclude with an optimistic note about technological solutions and policy changes that could mitigate the worst effects if implemented quickly.",
+    "category": "Science",
+    "featured": false,
+    "color": "bg-pastel-teal",
+    "textColor": "text-pastel-text"
+  },
+  {
+    "id": "4",
+    "title": "The Psychology of Decision Making",
+    "channel": "Mind Matters",
+    "duration": 4500,
+    "description": "Exploring how our brains make decisions and why we often make irrational choices.",
+    "summary": "This episode delves into the fascinating world of decision-making psychology. The host interviews Dr. Rebecca Chen, a cognitive psychologist specializing in judgment and decision-making. They discuss common cognitive biases like confirmation bias, anchoring, and the availability heuristic that affect our everyday choices. Dr. Chen explains how our brains take shortcuts to make decisions quickly, which was evolutionarily advantageous but can lead to errors in the modern world. The conversation also covers practical strategies for making better decisions, including awareness of biases, creating decision frameworks, and the value of diverse perspectives in group decision-making.",
+    "category": "Psychology",
+    "featured": false,
+    "color": "bg-pastel-purple",
+    "textColor": "text-pastel-text"
+  },
+  {
+    "id": "5",
+    "title": "The History of Ancient Rome: Rise and Fall",
+    "channel": "History Uncovered",
+    "duration": 6300,
+    "description": "A comprehensive look at the Roman Empire from its founding to its eventual collapse.",
+    "summary": "This episode provides a sweeping overview of Roman history, from its mythical founding by Romulus and Remus to the fall of the Western Roman Empire in 476 CE. The historians discuss key periods including the Roman Republic, the rise of Julius Caesar, the Pax Romana, and the gradual decline. They highlight the innovations in governance, law, engineering, and military tactics that made Rome successful, as well as the internal and external factors that contributed to its downfall. The discussion includes fascinating details about daily life in ancient Rome and how many Roman ideas and institutions continue to influence modern society.",
+    "category": "History",
+    "featured": true,
+    "color": "bg-pastel-orange",
+    "textColor": "text-pastel-text"
+  }
+]
