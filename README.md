@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<a name="readme-top"></a>
+
+<div align="center">
+  <div>
+    <img src="public/podfast.png" alt="PodFast Logo" width="100" height="100" style="margin: 0; padding: 0;" />
+  </div>
+  <h3 style="margin: 0; padding: 0;">PodFast</h3>
+  <p style="margin-top: 8px;">
+    Key Insights from Podcasts—Fast
+    <br />
+    <a href="https://podfast.netlify.app/"><strong>Visit the Website »</strong></a>
+    <br />
+  </p>
+</div>
+
+---
+
+## About
+
+PodFast is a web app that helps you make smarter choices with your time and attention. Just paste a YouTube URL, and PodFast gives you a concise, high-quality summary of the video or podcast—so you can quickly decide if it's worth a deeper listen.
+
+It’s designed for curious minds who want the key insights without the fluff. You’ll also find featured podcast summaries, giving you fast access to powerful ideas from top creators.
+
+### Built With
+
+- [![nextjs][nextjs]][nextjs-url]
+- [![tailwindcss][tailwindcss]][tailwindcss-url]
+- [![shadcn][shadcn]][shadcn-url]
+- [![typescript][typescript]][typescripturl]
+- [![netlify][netlify]][netlify-url]
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running follow these simple steps.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Make sure to have Node.js installed ([download instructions](https://nodejs.org/en/download)).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1.  Clone the repo
+    ```sh
+    git clone https://github.com/thienan11/PodFast.git
+    ```
+2.  Go into project directory and install all packages
+    ```sh
+    cd podfast
+    npm install
+    ```
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+To run the project locally:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Start the development server
+   ```sh
+   npm run dev
+   ```
+2. Visit `http://localhost:3000` in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[typescript]: https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white
+[typescripturl]: https://www.typescriptlang.org/
+[netlify]: https://img.shields.io/badge/Netlify-00C7B7?logo=netlify&logoColor=fff&style=for-the-badge
+[netlify-url]: https://netlify.com/
+[nextjs]: https://img.shields.io/badge/Next.js-%23000000.svg?style=for-the-badge&logo=next.js&logoColor=white
+[nextjs-url]: https://nextjs.org/
+[tailwindcss]: https://img.shields.io/badge/Tailwind_CSS-%231a202c.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
+[tailwindcss-url]: https://tailwindcss.com/
+[shadcn]: https://img.shields.io/badge/shadcn%2Fui-000?logo=shadcnui&logoColor=fff&style=for-the-badge
+[shadcn-url]: https://ui.shadcn.com/
