@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
+import { format, parse } from "date-fns";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -16,3 +17,12 @@ export function formatDuration(seconds: number): string {
     return `${minutes}m`
   }
 }
+
+export function formatDate(raw: string) {
+  try {
+    const parsed = parse(raw, "yyyyMMdd", new Date());
+    return format(parsed, "MMMM d, yyyy"); // e.g., "April 8, 2025"
+  } catch {
+    return "Invalid date";
+  }
+};

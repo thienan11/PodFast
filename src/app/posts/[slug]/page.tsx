@@ -4,10 +4,10 @@ import Markdown from "markdown-to-jsx";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { format, parse } from "date-fns";
 import { Calendar, Clock, Tv } from "lucide-react";
+import { formatDate } from "@/lib/utils";
 
-type BlogPostParams = {
+type PostParams = {
   params: Promise<{ slug: string }>;
 };
 
@@ -25,7 +25,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: BlogPostParams): Promise<Metadata> {
+}: PostParams): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPostData(slug);
 
@@ -35,20 +35,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function BlogPostPage({ params }: BlogPostParams) {
+export default async function PostPage({ params }: PostParams) {
   const { slug } = await params;
   const post = await getPostData(slug);
 
   if (!post) return notFound();
-
-  const formatRawDate = (raw: string) => {
-    try {
-      const parsed = parse(raw, "yyyyMMdd", new Date());
-      return format(parsed, "MMMM d, yyyy"); // e.g., "April 8, 2025"
-    } catch {
-      return "Invalid date";
-    }
-  };
 
   return (
     <>
@@ -68,7 +59,7 @@ export default async function BlogPostPage({ params }: BlogPostParams) {
             )}
             <span className="flex items-center gap-x-1">
               <Calendar size={16} />
-              <span>{formatRawDate(post.published)}</span>
+              <span>{formatDate(post.published)}</span>
             </span>
             {post.duration && (
               <span className="flex items-center gap-x-1">
