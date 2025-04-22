@@ -15,14 +15,16 @@ export default function Header() {
               height={60}
               alt="PodFast Logo"
             />
-            <span className="font-medium text-xl">PodFast</span>
+            <span className="font-medium text-xl text-primary-foreground">
+              PodFast
+            </span>
           </Link>
         </div>
 
         <nav className="flex items-center space-x-4">
           <Link
             href="/summarize"
-            className="inline-flex items-center gap-1 rounded-md border px-3 text-sm font-medium transition-colors hover:bg-muted h-9"
+            className="inline-flex items-center gap-1 rounded-md border px-3 text-sm font-medium transition-colors hover:bg-muted h-9 text-primary-foreground"
           >
             <WandSparkles className="h-4 w-4" />
             <span>Summarize</span>
