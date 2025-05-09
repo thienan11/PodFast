@@ -1,5 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
+import { PROTECTED_PATHS, AUTH_PATHS } from "@/utils/constants";
 
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
@@ -39,17 +40,22 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (
-    !user &&
-    !request.nextUrl.pathname.includes("/signin") &&
-    !request.nextUrl.pathname.includes("/signup") &&
-    !request.nextUrl.pathname.includes("/forgot-password") &&
-    !request.nextUrl.pathname.includes("/reset-password") &&
-    !request.nextUrl.pathname.includes("/auth")
-  ) {
+  const url = request.nextUrl.pathname;
+  const isProtectedRoute = PROTECTED_PATHS.some((path) => url.startsWith(path));
+  const isAuthRoute = AUTH_PATHS.some((path) => url.startsWith(path));
+
+  // Prevent unauthenticated users from accessing protected routes, redirect /signin
+  if (!user && isProtectedRoute) {
     // no user, potentially respond by redirecting the user to the signin page
     const url = request.nextUrl.clone();
     url.pathname = "/signin";
+    return NextResponse.redirect(url);
+  }
+
+  // Prevent authenticated users from accessing auth routes, redirect to home page
+  if (user && isAuthRoute) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/";
     return NextResponse.redirect(url);
   }
 
