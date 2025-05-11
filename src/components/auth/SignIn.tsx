@@ -1,13 +1,33 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import AuthButton from "./AuthButton";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { signIn } from "@/app/(auth)/actions";
+import { toast } from "sonner";
 
 export default function SignIn() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
+
+  // Ref to track if the toast was already shown
+  const hasShownToast = useRef(false);
+  useEffect(() => {
+    // Get the confirmed parameter from searchParams instead of window.location
+    const isConfirmed = searchParams.get("confirmed") === "true";
+
+    // Check that the toast hasn't been shown yet and that the parameter exists
+    if (isConfirmed && !hasShownToast.current) {
+      // Add a small timeout to ensure the UI is ready
+      setTimeout(() => {
+        toast.success("Your email has been confirmed!", {
+          description: "You can now sign in 🎉",
+        });
+        hasShownToast.current = true; // Mark as shown
+      }, 100);
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

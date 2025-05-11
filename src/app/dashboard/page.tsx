@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/utils/supabase/server";
+import ProfileCard from "@/components/dashboard/ProfileCard";
 
 export default async function Dashboard() {
   const supabase = await createClient();
@@ -10,5 +11,9 @@ export default async function Dashboard() {
     redirect("/signin");
   }
 
-  return <p>Hello {data.user.email}</p>;
+  return (
+    <div className="flex items-center justify-center m-20">
+      <ProfileCard user={data.user} />
+    </div>
+  );
 }

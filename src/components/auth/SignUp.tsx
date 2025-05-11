@@ -1,13 +1,15 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import AuthButton from "./AuthButton";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { signUp } from "@/app/(auth)/actions";
+import { toast } from "sonner";
 
 export default function SignUp() {
-  const router = useRouter();
+  // const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -18,7 +20,14 @@ export default function SignUp() {
     const result = await signUp(formData);
 
     if (result.status === "success") {
-      router.push("/signin");
+      // Clear input fields after successful signup
+      formRef.current?.reset();
+      // Show success toast
+      toast.info(
+        "Account created successfully. Please check your email to verify your account!"
+      );
+
+      // router.push("/signin");
     } else {
       setError(result.status);
     }
@@ -28,7 +37,11 @@ export default function SignUp() {
 
   return (
     <div className="px-5 sm:px-0">
-      <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
+      <form
+        ref={formRef}
+        onSubmit={handleSubmit}
+        className="w-full flex flex-col gap-4"
+      >
         <div>
           <label className="block text-sm font-medium text-primary-foreground">
             Username
