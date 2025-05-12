@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ModeToggle } from "@/components/ThemeToggle";
 import UserNav from "@/components/UserNav";
 import { createClient } from "@/utils/supabase/server";
+import { MobileMenu } from "@/components/MobileMenu";
 
 export default async function Header() {
   const supabase = await createClient();
@@ -28,7 +29,14 @@ export default async function Header() {
           </Link>
         </div>
 
-        <nav className="flex items-center space-x-4">
+        {/* Mobile Menu */}
+        <div className="sm:hidden flex gap-3">
+          <ModeToggle />
+          <MobileMenu user={user} />
+        </div>
+
+        {/* Desktop Menu */}
+        <nav className="hidden sm:flex items-center space-x-4 sm:space-x-6">
           <Link
             href="/summarize"
             className="inline-flex items-center gap-1 rounded-md border px-3 text-sm font-medium transition-colors hover:bg-muted h-9 text-primary-foreground"

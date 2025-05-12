@@ -19,7 +19,7 @@ export default async function SignUpPage() {
             className="mr-3 grow border-t border-dotted border-gray-400"
             aria-hidden="true"
           />
-          <span className="text-gray-400">Or, sign up with your email</span>
+          <p className="text-gray-400">Or, sign up with your email</p>
           <span
             className="ml-3 grow border-t border-dotted border-gray-400"
             aria-hidden="true"
@@ -29,7 +29,7 @@ export default async function SignUpPage() {
         <SignUp />
 
         <div className="mt-6 flex items-center px-5 sm:px-0 text-primary-foreground">
-          <h1>Already have an account?</h1>
+          <p>Already have an account?</p>
           <Link
             className="font-bold ml-2 hover:underline text-primary-foreground"
             href="/signin"

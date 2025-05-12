@@ -19,7 +19,7 @@ export default function SignInPage() {
             className="mr-3 grow border-t border-dotted border-gray-400"
             aria-hidden="true"
           />
-          <span className="text-gray-400">Or, sign in with your email</span>
+          <p className="text-gray-400">Or, sign in with your email</p>
           <span
             className="ml-3 grow border-t border-dotted border-gray-400"
             aria-hidden="true"
@@ -29,14 +29,14 @@ export default function SignInPage() {
         <SignIn />
 
         <div className="mt-6 flex items-center px-5 sm:px-0 text-primary-foreground">
-          <h1>{`Don't have an account?`}</h1>
+          <p className="m-0">{`Don't have an account?`}</p>
           <Link className="font-bold ml-2 hover:underline" href="/signup">
             Sign Up
           </Link>
         </div>
         <div className="mt-3 flex items-center px-5 sm:px-0 text-primary-foreground">
           <Link className="font-bold hover:underline" href="/forgot-password">
-            <h1>{`Forgot your password?`}</h1>
+            Forgot your password?
           </Link>
         </div>
       </section>
