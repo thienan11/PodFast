@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
-import AuthButton from "./AuthButton";
+import AuthButton from "@/components/auth/AuthButton";
 // import { useRouter } from "next/navigation";
 import { signUp } from "@/app/(auth)/actions";
 import { toast } from "sonner";

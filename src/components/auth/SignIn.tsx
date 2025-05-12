@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import AuthButton from "./AuthButton";
+import AuthButton from "@/components/auth/AuthButton";
 import { useRouter, useSearchParams } from "next/navigation";
 import { signIn } from "@/app/(auth)/actions";
 import { toast } from "sonner";
