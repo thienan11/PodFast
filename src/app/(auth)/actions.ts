@@ -1,9 +1,10 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-// import { redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
-// import { headers } from "next/headers";
+import { headers } from "next/headers";
+import { Provider } from "@supabase/supabase-js";
 
 export async function signUp(formData: FormData) {
   const supabase = await createClient();
@@ -104,4 +105,27 @@ export async function signOut() {
       error: "An unexpected error occurred during sign out. Please try again.",
     };
   }
+}
+
+// OAuth sign-in with Google or another OAuth
+export async function signinWithOAuth(provider: Provider) {
+  const origin = (await headers()).get("origin");
+  const supabase = await createClient();
+
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: provider,
+    options: {
+      redirectTo: `${origin}/auth/callback`,
+    },
+  });
+
+  if (error) {
+    redirect("/auth/error?message=Could not authenticate user");
+  }
+
+  if (data.url) {
+    redirect(data.url);
+  }
+
+  revalidatePath("/", "layout");
 }

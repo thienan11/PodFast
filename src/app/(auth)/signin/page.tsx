@@ -11,7 +11,7 @@ export default function SignInPage() {
         </h1>
 
         <div className="px-5 sm:px-0">
-          <OAuthButton provider="Google" authType="Sign in" />
+          <OAuthButton provider="google" authType="Sign in" />
         </div>
 
         <div className="my-6 flex items-center">

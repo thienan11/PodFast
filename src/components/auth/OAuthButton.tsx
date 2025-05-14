@@ -2,14 +2,16 @@
 
 import React, { useTransition } from "react";
 import { GoogleLogoColored } from "@/components/ui/icons";
+import { signinWithOAuth } from "@/app/(auth)/actions";
+import { Provider } from "@supabase/supabase-js";
 
 interface OAuthButtonProps {
-  provider: "Google";
+  provider: Provider;
   authType: "Sign in" | "Sign up";
 }
 
 const providerIcons: Record<string, React.ElementType> = {
-  Google: GoogleLogoColored,
+  google: GoogleLogoColored,
 };
 
 export default function OAuthButton({ provider, authType }: OAuthButtonProps) {
@@ -17,8 +19,9 @@ export default function OAuthButton({ provider, authType }: OAuthButtonProps) {
   const Icon = providerIcons[provider];
 
   const handleLogin = () => {
-    startTransition(async () => {});
-    alert("OAuth not working yet!");
+    startTransition(async () => {
+      await signinWithOAuth(provider);
+    });
   };
 
   return (

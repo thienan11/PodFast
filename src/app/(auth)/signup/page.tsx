@@ -11,7 +11,7 @@ export default async function SignUpPage() {
         </h1>
 
         <div className="px-5 sm:px-0">
-          <OAuthButton provider="Google" authType="Sign up" />
+          <OAuthButton provider="google" authType="Sign up" />
         </div>
 
         <div className="my-6 flex items-center">
