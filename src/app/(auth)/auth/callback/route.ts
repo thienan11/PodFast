@@ -27,12 +27,7 @@ export async function GET(request: Request) {
         .single();
 
       if (!existingUser) {
-        const username =
-          data.user.user_metadata?.user_name ||
-          data.user.user_metadata?.username ||
-          data.user.user_metadata?.full_name ||
-          data.user.user_metadata?.name ||
-          data.user.user_metadata?.email.split("@")[0]; // Fallback to email username
+        const username = data.user.user_metadata?.full_name;
         // insert the new user into the User table
         const { error: dbError } = await supabase.from("User").insert({
           email: data?.user?.email,

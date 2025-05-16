@@ -25,17 +25,24 @@ export default function ProfileCard({ user }: ProfileCardProps) {
           <Avatar className="h-16 w-16">
             <AvatarImage
               src={user.user_metadata.avatar_url}
-              alt={user?.user_metadata.username || "User avatar"}
+              alt={
+                user?.user_metadata.username ||
+                user?.user_metadata.full_name ||
+                "User avatar"
+              }
             />
             <AvatarFallback>
               {user?.user_metadata.username?.[0].toUpperCase() ||
+                user?.user_metadata.full_name?.[0].toUpperCase() ||
                 user?.email?.[0] ||
                 "U"}
             </AvatarFallback>
           </Avatar>
           <div>
             <p className="text-lg font-medium">
-              {user?.user_metadata.username ?? "User"}
+              {user?.user_metadata.username ||
+                user?.user_metadata.full_name ||
+                "User"}
             </p>
             <p className="text-muted-foreground">{user?.email}</p>
           </div>

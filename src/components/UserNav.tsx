@@ -67,10 +67,15 @@ export default function UserNav({ user }: { user: User | null }) {
               <Avatar className="h-9 w-9 cursor-pointer border rounded-md bg-muted">
                 <AvatarImage
                   src={user?.user_metadata.avatar_url}
-                  alt={user?.user_metadata.username || "User avatar"}
+                  alt={
+                    user?.user_metadata.username ||
+                    user?.user_metadata.full_name ||
+                    "User avatar"
+                  }
                 />
                 <AvatarFallback className="text-xs font-medium">
                   {user?.user_metadata.username?.[0].toUpperCase() ||
+                    user?.user_metadata.full_name?.[0].toUpperCase() ||
                     user?.email?.[0].toUpperCase() ||
                     "U"}
                 </AvatarFallback>
