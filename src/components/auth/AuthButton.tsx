@@ -4,7 +4,7 @@ export default function AuthButton({
   type,
   loading,
 }: {
-  type: "Sign In" | "Sign up" | "Reset Password" | "Forgot Password";
+  type: "Sign In" | "Sign up" | "Reset Password" | "Update Password";
   loading: boolean;
 }) {
   return (

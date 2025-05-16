@@ -1,12 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import AuthButton from "./AuthButton";
-// import { useRouter, useSearchParams } from "next/navigation";
 
 export default function ResetPassword() {
-  // const searchParams = useSearchParams();
   const [error, setError] = useState<string | null>(null);
-  // const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false);
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -20,13 +17,13 @@ export default function ResetPassword() {
       <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-200">
-            New Password
+            Email
           </label>
           <input
-            type="password"
-            placeholder="Password"
-            id="Password"
-            name="password"
+            type="email"
+            placeholder="Email"
+            id="Email"
+            name="email"
             className="mt-1 w-full px-4 p-2  h-10 rounded-md border border-gray-200 bg-white text-sm text-gray-700"
           />
         </div>

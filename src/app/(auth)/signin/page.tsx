@@ -35,7 +35,7 @@ export default function SignInPage() {
           </Link>
         </div>
         <div className="mt-3 flex items-center px-5 sm:px-0 text-primary-foreground">
-          <Link className="font-bold hover:underline" href="/forgot-password">
+          <Link className="font-bold hover:underline" href="/reset-password">
             Forgot your password?
           </Link>
         </div>
