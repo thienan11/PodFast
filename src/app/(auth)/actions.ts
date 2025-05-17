@@ -129,3 +129,42 @@ export async function signinWithOAuth(provider: Provider) {
 
   revalidatePath("/", "layout");
 }
+
+export async function resetPassword(formData: FormData) {
+  const origin = (await headers()).get("origin");
+  const supabase = await createClient();
+
+  const email = formData.get("email") as string;
+
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${origin}/update-password`,
+  });
+
+  if (error) {
+    return { status: error?.message };
+  }
+
+  // redirect("/update-password?success=true");
+  return { status: "success" };
+}
+
+export async function updateUserPassword(formData: FormData) {
+  const supabase = await createClient();
+  // const { error: CodeError } = await supabase.auth.exchangeCodeForSession(code);
+
+  // if (CodeError) {
+  //   return { status: CodeError?.message };
+  // }
+
+  const { error } = await supabase.auth.updateUser({
+    password: formData.get("password") as string,
+  });
+
+  if (error) {
+    return { status: error?.message };
+  }
+
+  revalidatePath("/", "layout");
+
+  return { status: "success" };
+}
