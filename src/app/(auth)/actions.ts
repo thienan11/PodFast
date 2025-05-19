@@ -168,3 +168,22 @@ export async function updateUserPassword(formData: FormData) {
 
   return { status: "success" };
 }
+
+export async function resendConfirmationEmail(email: string) {
+  const origin = (await headers()).get("origin");
+  const supabase = await createClient();
+
+  const { error } = await supabase.auth.resend({
+    type: "signup",
+    email: email,
+    options: {
+      emailRedirectTo: `${origin}/dashboard`,
+    },
+  });
+
+  if (error) {
+    return { status: error?.message };
+  }
+
+  revalidatePath("/", "layout");
+}
