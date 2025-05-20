@@ -1,12 +1,12 @@
 "use client";
 import React, { useRef, useState } from "react";
 import AuthButton from "@/components/auth/AuthButton";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { signUp } from "@/app/(auth)/actions";
 import { toast } from "sonner";
 
 export default function SignUp() {
-  // const router = useRouter();
+  const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const formRef = useRef<HTMLFormElement>(null);
@@ -17,6 +17,7 @@ export default function SignUp() {
     setError(null);
 
     const formData = new FormData(event.currentTarget);
+    const email = formData.get("email");
     const result = await signUp(formData);
 
     if (result.status === "success") {
@@ -27,7 +28,7 @@ export default function SignUp() {
         "Account created successfully. Please check your email to verify your account!"
       );
 
-      // router.push("/signin");
+      router.push(`/verification?email=${encodeURIComponent(email as string)}`);
     } else {
       setError(result.status);
     }

@@ -186,4 +186,6 @@ export async function resendConfirmationEmail(email: string) {
   }
 
   revalidatePath("/", "layout");
+
+  return { status: "success" };
 }
